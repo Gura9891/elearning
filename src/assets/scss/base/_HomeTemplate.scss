@@ -1,0 +1,20 @@
+#header {
+  width: 292px !important;
+  border-radius: 0 70px 70px 0;
+  -webkit-border-radius: 0 70px 70px 0;
+  -moz-border-radius: 0 70px 70px 0;
+  -ms-border-radius: 0 70px 70px 0;
+  -o-border-radius: 0 70px 70px 0;
+  background-color: #f2d388 !important;
+  .nav-menu {
+    .nav-link:hover {
+      padding: 25px;
+      transition: 0.5s ease;
+      border-radius: 20px;
+      background: #f2d388;
+      box-shadow: 11px 11px 22px #ceb374, -11px -11px 22px #fff39c;
+    }
+  }
+}
+
+

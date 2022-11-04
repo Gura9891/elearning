@@ -29,7 +29,7 @@ export default function DetailProduct({ detailProduct }: Props) {
     <div>
       <div className="BodyDetail">
         <div className="container">
-          <div className="d-flex">
+          <div className="d-flex content-backgroud">
             <div className="content-left">
               <div className="course-content">
                 <h1 className="course-name">{detailProduct.tenKhoaHoc}</h1>

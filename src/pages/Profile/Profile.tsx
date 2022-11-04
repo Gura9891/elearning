@@ -131,7 +131,7 @@ export default function Profile({}: Props) {
   return (
     <div className="update">
       <div className="order  align-items-start flex-wrap justify-content-around ">
-        <div className="nav-title">
+        <div className="container nav-title">
           <h3 className="container " style={{ color: "white" }}>
             Học viên: {userLogin.hoTen}
           </h3>
@@ -167,13 +167,13 @@ export default function Profile({}: Props) {
             </button>
           </div>
         </div>
-        <div className="content-right">
+        <div className="container content_right">
           <div
-            className="tab-content border border-dark border-2"
+            className="tab-content tab_content border border-dark border-2"
             id="v-pills-tabContent"
           >
             <div
-              className="container tab-pane  show active"
+              className="container tab-pane tab-left show active"
               id="v-pills-profile"
               role="tabpanel"
               aria-labelledby="v-pills-profile-tab"
@@ -303,16 +303,16 @@ export default function Profile({}: Props) {
             </div>
 
             <div
-              className="container tab-pane bg-white"
+              className="container tab-pane tab_right bg-white"
               id="v-pills-course"
               role="tabpanel"
               aria-labelledby="v-pills-course-tab"
             >
               <div className="mt-2">
                 <div className="title d-flex justify-content-between">
-                  <h2>Các khoá học đã tham gia</h2>
+                  <h2 style={{margin:20}}>Các khoá học đã tham gia</h2>
                   <div>
-                    <Space direction="vertical">
+                    <Space direction="vertical" style={{margin:20}}>
                       <Search
                         placeholder="Nhập khoá học cần tìm"
                         onSearch={onSearch}
@@ -344,7 +344,7 @@ export default function Profile({}: Props) {
                               <Rate value={course.danhGia} />
                             </div>
                             <span>{course.luotXem}</span>
-                            <button className="btn"> Huỷ</button>
+                            <button className="btn"> Hủy</button>
                           </div>
                         </div>
                       </div>

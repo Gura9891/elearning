@@ -113,7 +113,7 @@ export default function LoginAdmin ({}: Props) {
             </div>
             <button
               type='submit'
-              className="btn btn-primary btn-lg"
+              className="btn btn_login btn-primary btn-lg"
               style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
             >
               Đăng nhập
