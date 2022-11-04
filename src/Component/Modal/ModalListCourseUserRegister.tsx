@@ -41,7 +41,7 @@ export default function ModalListCourseUserRegister ({ maKhoaHoc }: Props) {
           dispatch(getArrUserUnReigsterCourseApi(maKhoaHoc))
         }}
       >
-        <i className='bi bi-plus-circle m-0 p-2'></i>
+    <i className="fa-sharp fa-solid fa-plus"></i>
       </Button>
       <Modal
         title='Ghi danh học viên'

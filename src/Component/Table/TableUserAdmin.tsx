@@ -55,7 +55,7 @@ export default function TableUserAdmin ({}: Props) {
           <ModalUserAdmin user={e}/>
           <button className='red-button p-2' onClick={() => {
             dispatch(deleteUserApi(e.taiKhoan))
-          }}><i className='bi bi-trash3 m-0 p-2'></i></button>
+          }}><i className="fa-solid fa-trash"></i></button>
         </div>
       )
     }

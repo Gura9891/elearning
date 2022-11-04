@@ -99,10 +99,7 @@ export default function HomeAdmin() {
               <div className="card-body p-4 text-black">
                 <div className="mb-5">
                   <p className="lead fw-normal mb-1">About</p>
-                  {/* <div className="p-4" style={{ backgroundColor: "#f8f9fa" }}>
-                    <ChartUser />
-                    <p>Thành viên: {arrUser.length}</p>
-                  </div> */}
+   
                 </div>
                 <div className="col">
                   <img

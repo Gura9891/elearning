@@ -41,7 +41,7 @@ export default function ModalListUserRegisterCourse ({ taiKhoan }: Props) {
           dispatch(getArrCourseNotRegisterApi(taiKhoan))
         }}
       >
-        <i className='bi bi-plus-circle m-0 p-2'></i>
+         <i className="fa-sharp fa-solid fa-plus"></i>
       </Button>
       <Modal
         title='Ghi danh khóa học'
