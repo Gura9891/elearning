@@ -50,8 +50,8 @@ root.render(
           <Route path="detail">
             <Route path=":maKhoaHoc" element={<Detail />}></Route>
           </Route>
-          <Route path="search">
-            <Route path=":tenKhoaHoc" element={<Search />}></Route>
+          <Route path="search" element={<Search />}>
+            <Route path=":keyword" element={<Search />}></Route>
           </Route>
           <Route path="cart" element={<Cart />}></Route>
 
