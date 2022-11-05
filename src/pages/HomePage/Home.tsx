@@ -83,12 +83,15 @@ export default function Home({ title }: Props) {
   };
 
   const contentStyle: React.CSSProperties = {
-    height: "auto",
-    color: "#002333",
-    // lineHeight: '10px',
-    textAlign: "center",
-    background: "#232121",
-    padding: "50px",
+    margin: 0,
+    height: '160px',
+    color: '#fff',
+    lineHeight: '160px',
+    textAlign: 'center',
+    // background: '#364d79',
+  };
+  const onChange = (currentSlide: number) => {
+    console.log(currentSlide);
   };
 
   return (
@@ -157,32 +160,63 @@ export default function Home({ title }: Props) {
             </button>
           </div>
         </div>
-        <Carousel autoplay>
+        <section className="count section" style={{padding:"50px 0"}}>
+          <div className="container">
+            <h3 className="text-center" style={{padding:'20px 0' }}>Thống Kê Thành Tựu Đạt Được</h3>
+            <div className="count__content grid">
+              <div className="count__item">
+                <div className="item__icon icon">
+                  <i className="fa fa-book" />
+                </div>
+                <p><span className="counter">15,100</span></p>
+                <p>Khoá Học</p>
+              </div>
+              <div className="count__item">
+                <div className="item__icon icon">
+                  <i className="fa fa-user-graduate" />
+                </div>
+                <p><span className="counter">19,256</span></p>
+                <p>Học Viên</p>
+              </div>
+              <div className="count__item">
+                <div className="item__icon icon">
+                  <i className="fa-solid fa-building" />
+                </div>
+                <p><span className="counter">12,100</span></p>
+                <p>Việc Làm</p>
+              </div>
+              <div className="count__item">
+                <div className="item__icon icon">
+                  <i className="fa fa-chalkboard-teacher" />
+                </div>
+                <p><span className="counter">10,560</span></p>
+                <p>Giảng Viên</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <Carousel afterChange={onChange}>
           <section className="testmonial section" style={contentStyle}>
             <div className="container">
               <div className="testimonial__header">
-                <h3 className="section__title--sub">Testimonials</h3>
-                <h2 className="section__title">What People Say</h2>
+                <h2 className="section__title">Cảm Nhận Của Học Viên</h2>
               </div>
               <div className="testimonial__content">
                 <div className="testimonial__item">
                   <div className="item__content">
                     <a href="#" className="comment-img">
-                      <img src="../../assets/img/user-avatar.jpg" alt="..." />
+                      <img src="../../assets/img/dat.png" alt="..." />
                     </a>
                     <div className="quote">
                       <i className="fas fa-quote-left"></i>
                       <span>OMG! I cannot believe. It's Awesome"</span>
                     </div>
                     <span>
-                      My new site is so much faster and easier to work with than
-                      my old site. They are here to help the customers to get
-                      their success. Nemo sit eos, quod minus eius illo labore.
-                      Pellen tesque libero ut justo, ultrices in ligula.
+                      "Hệ thống support linh hoạt, hỗ trợ, phản hồi thắc mắc học viên nhanh chóng."
                     </span>
                     <div className="testimonial__info">
-                      <h3>Johnson William</h3>
-                      <span>Customer</span>
+                      <h3>Vũ Thành Đạt</h3>
                     </div>
                   </div>
                 </div>
@@ -192,28 +226,23 @@ export default function Home({ title }: Props) {
           <section className="testmonial section" style={contentStyle}>
             <div className="container">
               <div className="testimonial__header">
-                <h3 className="section__title--sub">Testimonials</h3>
-                <h2 className="section__title">What People Say</h2>
+                <h2 className="section__title">Cảm Nhận Của Học Viên</h2>
               </div>
               <div className="testimonial__content">
                 <div className="testimonial__item">
                   <div className="item__content">
                     <a href="#" className="comment-img">
-                      <img src="../../assets/avatar1.jpg" alt="..." />
+                      <img src="../../assets/athang.png" alt="..." />
                     </a>
                     <div className="quote">
                       <i className="fas fa-quote-left"></i>
                       <span>OMG! I cannot believe. It's Awesome"</span>
                     </div>
                     <span>
-                      My new site is so much faster and easier to work with than
-                      my old site. They are here to help the customers to get
-                      their success. Nemo sit eos, quod minus eius illo labore.
-                      Pellen tesque libero ut justo, ultrices in ligula.
+                      "Các khóa học dễ hiểu, phù hợp với các nhu cầu tuyển dụng ngày nay."
                     </span>
                     <div className="testimonial__info">
-                      <h3>Kevin De Bruyne</h3>
-                      <span>Customer</span>
+                      <h3>Nguyễn Tường Giang</h3>
                     </div>
                   </div>
                 </div>
@@ -223,8 +252,7 @@ export default function Home({ title }: Props) {
           <section className="testmonial section" style={contentStyle}>
             <div className="container">
               <div className="testimonial__header">
-                <h3 className="section__title--sub">Testimonials</h3>
-                <h2 className="section__title">What People Say</h2>
+                <h2 className="section__title">Cảm Nhận Của Học Viên</h2>
               </div>
               <div className="testimonial__content">
                 <div className="testimonial__item">
@@ -237,14 +265,10 @@ export default function Home({ title }: Props) {
                       <span>OMG! I cannot believe. It's Awesome"</span>
                     </div>
                     <span>
-                      My new site is so much faster and easier to work with than
-                      my old site. They are here to help the customers to get
-                      their success. Nemo sit eos, quod minus eius illo labore.
-                      Pellen tesque libero ut justo, ultrices in ligula.
+                      "Nhờ các khóa học mà em bổ sung được nhiều kiến thức phù hợp xu hướng hiện nay."
                     </span>
                     <div className="testimonial__info">
-                      <h3>Johnson Jennyfer</h3>
-                      <span>Customer</span>
+                      <h3>Giang Đức Thắng</h3>
                     </div>
                   </div>
                 </div>
@@ -252,6 +276,7 @@ export default function Home({ title }: Props) {
             </div>
           </section>
         </Carousel>
+
       </div>
     </>
   );

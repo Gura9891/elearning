@@ -47,7 +47,7 @@ export default function Cart({ }: Props) {
         }
         else {
             alert('đăng kí thành công')
-            navigate('/profile')
+            navigate('/#')
             // addCartItem()
         }
     }
