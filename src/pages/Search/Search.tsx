@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useSearchParams } from "react-router-dom";
+import { NavLink, useNavigate, useSearchParams } from "react-router-dom";
 import { AppDispatch, RootState } from "../../redux/configStore";
 import { getListCourseApi, KhoaHoc } from "../../redux/reducers/productProducer";
 
@@ -14,6 +14,22 @@ export default function Search({}: Props) {
 
   let [searchParams, setSearchParams] = useSearchParams();
   const keyword: string | null = searchParams.get("keyword");
+
+  let keywordRef = useRef("");
+  const navigate = useNavigate()
+  const handleChange = (e: any) => {
+    keywordRef.current = e.target.value;
+  };
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    if (keywordRef.current !== "") {
+      navigate({
+        pathname: "/search",
+        search: `?keyword=${keywordRef.current.replace(" ", "+")}`,
+      });
+    }
+  };
+
 
   const removeAccents = (str: string) => {
     var AccentsMap = [
@@ -61,6 +77,16 @@ export default function Search({}: Props) {
           Tìm thấy {newSearchArr.length} khoá học liên quan{" "}
           {keyword?.toUpperCase()}
         </h1>
+        <form className="d-flex" onSubmit={handleSubmit}>
+                <input
+                  className="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                  onChange={handleChange}
+                />
+                <button className="btn btn-outline-success" type="submit" >Search</button>
+              </form>
       </div>
       <div>
         {newSearchArr?.map((item: KhoaHoc, index: number) => {

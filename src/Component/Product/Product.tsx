@@ -28,7 +28,7 @@ export default function Product({ product }: Props) {
         </NavLink>
       </div> */}
 
-<Card className='mb-2'
+<Card className='mb-2 ms-4 center'
     style={{ width: 390 } }
     cover={
       <img
