@@ -64,6 +64,18 @@ export interface RegisterCourse {
   biDanh: string
 }
 
+export interface KhoaHoc {
+  maKhoaHoc: string;
+  biDanh: string;
+  tenKhoaHoc: string;
+  moTa: string;
+  luotXem: string;
+  hinhAnh: string;
+  maNhom: string;
+  ngayTao: string;
+  soLuongHocVien: number;
+  danhMucKhoaHoc: DanhMucKhoaHoc;
+}
 
 
 const initialState: any = {
@@ -71,7 +83,7 @@ const initialState: any = {
   arrProductList: [],
   coursesList: [],
   searchProduct :[],
- 
+  arrCourses:[],
   cart: [],
 
 };
@@ -105,6 +117,9 @@ const productReducer = createSlice({
     clearCart: (state, action: PayloadAction<ProductModel[]>) => {
       state.cart = []
     },
+    getListCourseAction: (state, action: PayloadAction<KhoaHoc[]>) => {
+      state.arrCourses = action.payload;
+    },
    
 
   },
@@ -118,6 +133,7 @@ export const {
   getDetailItemAction,
   addCart,
   clearCart,
+  getListCourseAction
   
 } = productReducer.actions;
 
@@ -221,3 +237,15 @@ export const getDetailApi = (maKhoaHoc: any ) => {
   };
 };
 
+export const getListCourseApi = () => {
+  return async (dispatch: AppDispatch) => {
+    try {
+      const result = await http.get("/QuanLyKhoaHoc/LayDanhSachKhoaHoc");
+      let arrCourses: KhoaHoc[] = result.data;
+      const action = getListCourseAction(arrCourses);
+      dispatch(action);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};

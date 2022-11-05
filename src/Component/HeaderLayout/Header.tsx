@@ -63,55 +63,21 @@ export default function Header({}: Props) {
 
   // --------
 
-  let tenKhoaHocRef = useRef("");
-  let [searchParams, setSearchParams] = useSearchParams();
-  let [arrProduct, setArrProduct] = useState([]);
-  let navigate = useNavigate();
-  const getProductByTenKhoaHoc = async () => {
-    try {
-      let tenKhoaHoc = searchParams.get("tenKhoaHoc");
-      if (tenKhoaHoc?.trim() !== "" && tenKhoaHoc !== null) {
-        let result = await http.get(
-          "/QuanLyKhoaHoc/LayDanhSachKhoaHoc?tenKhoaHoc=" + tenKhoaHoc
-        );
-        console.log(result.data);
-        setArrProduct(result.data);
-      } else {
-        setArrProduct([]);
-      }
-    } catch (err) {
-      console.log({ err });
-    }
-  };
-
-  useEffect(() => {
-    getProductByTenKhoaHoc();
-  }, [tenKhoaHocRef.current]);
-
+  let keywordRef = useRef("");
+  const navigate = useNavigate();
   const handleChange = (e: any) => {
-    tenKhoaHocRef.current = e.target.value;
+    keywordRef.current = e.target.value;
   };
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    setSearchParams({ tenKhoaHoc: tenKhoaHocRef.current });
+    if (keywordRef.current !== "") {
+      navigate({
+        pathname: "/search",
+        search: `?keyword=${keywordRef.current.replace(" ", "+")}`,
+      });
+    }
   };
-  const renderProductByTenKhoaHoc = () => {
-    return arrProduct.map((prod: ProductModel, index: number) => {
-      return (
-        <div key={index}>
-          <button
-            className="btn btn-outline-success"
-            type="submit"
-            onClick={() => {
-              navigate(`/search/${prod.tenKhoaHoc}`);
-            }}
-          >
-            Search
-          </button>
-        </div>
-      );
-    });
-  };
+
 
   return (
     <div className="container" style={{ padding: 0 }}>
@@ -183,8 +149,7 @@ export default function Header({}: Props) {
                   aria-label="Search"
                   onChange={handleChange}
                 />
-                {/* <button className="btn btn-outline-success" type="submit" >Search</button> */}
-                {renderProductByTenKhoaHoc()}
+                <button className="btn btn-outline-success" type="submit" >Search</button>
               </form>
 
               <button className="signin">{renderLoginNavItem()}</button>
