@@ -11,6 +11,7 @@ import { store } from "./redux/configStore";
 import HomeTemplate from "./templates/HomeTemplate";
 import "antd/dist/antd.css"; 
 import "./assets/scss/style.scss";
+
 import Home from "./pages/HomePage/Home";
 import { createBrowserHistory } from "history";
 
@@ -27,6 +28,7 @@ import LoginAdmin from "./pages/Admin/Login/LoginAdmin";
 import HomeAdmin from "./pages/Admin/HomeAdmin/HomeAdmin";
 import CourseAdmin from "./pages/Admin/CourseAdmin/CourseAdmin";
 import UserAdmin from "./pages/Admin/UserAdmin/UserAdmin";
+
 
 export const history = createBrowserHistory({ window });
 
@@ -62,6 +64,7 @@ root.render(
           <Route path="home" element={<HomeAdmin />}></Route>
           <Route path="course" element={<CourseAdmin />}></Route>
           <Route path="user" element={<UserAdmin />}></Route>
+        
         </Route>
       </Routes>
     </HistoryRouter>
