@@ -61,6 +61,7 @@ root.render(
         </Route>
         <Route path="admin" element={<AdminTemplate />}>
           <Route path="" element={<LoginAdmin />}></Route>
+          <Route path="login" element={<LoginAdmin />}></Route>
           <Route path="home" element={<HomeAdmin />}></Route>
           <Route path="course" element={<CourseAdmin />}></Route>
           <Route path="user" element={<UserAdmin />}></Route>
