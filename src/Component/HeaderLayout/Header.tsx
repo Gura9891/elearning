@@ -15,7 +15,7 @@ import { http } from "../../util/setting";
 
 type Props = {};
 
-export default function Header({}: Props) {
+export default function Header({ }: Props) {
   const { arrProductList } = useSelector(
     (state: RootState) => state.productProducer
   );
@@ -25,7 +25,7 @@ export default function Header({}: Props) {
   const renderLoginNavItem = () => {
     if (Object.values(userLogin).length === 0) {
       console.log(123);
-      return <NavLink to="/login">Đăng Nhập</NavLink>;
+      return <NavLink to="/login">Sign In</NavLink>;
     } else {
       return (
         <NavLink to="/profile" style={{ textDecoration: "none" }}>
@@ -37,10 +37,10 @@ export default function Header({}: Props) {
   const renderRegisterNavItem = () => {
     if (Object.values(userLogin).length === 0) {
       console.log(123);
-      return <button className="sigup m-2" style={{padding:5 , backgroundColor: 'red', borderRadius:5, fontWeight:600}}><NavLink to="/register">Đăng ýý</NavLink></button>;
+      return <button className="sigup m-2" style={{ padding: 5, backgroundColor: 'red', borderRadius: 5, fontWeight: 600 }}><NavLink to="/register">Sign Up</NavLink></button>;
     } else {
-      return 
-    
+      return
+
     }
   };
 
@@ -80,10 +80,10 @@ export default function Header({}: Props) {
 
 
   return (
-    <div className="container" style={{ padding: 0 }}>
+    <div className="" style={{ padding: 0 }}>
       <div className="header">
         <nav className="navbar navbar-expand-lg navbar-light">
-          <div className="container-fluid">
+          <div className="container-fluid" style={{ backgroundColor: '#002333' }}>
             <a
               className="navbar-brand logo-title"
               href="#"
@@ -118,7 +118,7 @@ export default function Header({}: Props) {
                       navigate("/");
                     }}
                   >
-                    Home
+                    Trang Chủ
                   </a>
                 </li>
 
@@ -141,15 +141,17 @@ export default function Header({}: Props) {
                   </ul>
                 </li>
               </ul>
-              <form className="d-flex" onSubmit={handleSubmit}>
+              <form className="d-flex me-2" onSubmit={handleSubmit}>
                 <input
                   className="form-control me-2"
                   type="search"
-                  placeholder="Search"
+                  placeholder="Tìm Kiếm"
                   aria-label="Search"
                   onChange={handleChange}
                 />
-                <button className="btn btn-outline-success" type="submit" >Search</button>
+                <button className="search" type="submit" >
+                  <i className="fas fa-search"></i>
+                </button>
               </form>
 
               <button className="signin">{renderLoginNavItem()}</button>

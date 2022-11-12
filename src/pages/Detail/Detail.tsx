@@ -49,7 +49,7 @@ export default function Detail({}: Props) {
   const renderProductList = () => {
     return arrProduct.map((prod: ProductModel, index: number) => {
       return (
-        <div key={index}>
+        <div className="col-lg-4 col-md-5 col-ms-8" key={index}>
           <Product product={prod} />
         </div>
       );

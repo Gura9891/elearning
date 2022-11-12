@@ -28,29 +28,29 @@ export default function Product({ product }: Props) {
         </NavLink>
       </div> */}
 
-<Card className='mb-2 ms-4 center'
-    style={{ width: 390 } }
-    cover={
-      <img
-      style={{ height: 250 } }
-      alt={product.tenKhoaHoc}
-        src={product.hinhAnh}
-      />
-    }
-    actions={[
+      <Card className='mb-2 ms-4 center'
+        // style={{ width: 390 }}
+        cover={
+          <img
+            style={{ height: 250 }}
+            alt={product.tenKhoaHoc}
+            src={product.hinhAnh}
+          />
+        }
+        actions={[
 
-      
-      <NavLink to={`/detail/${product.maKhoaHoc}`} className="btn">
-      Đăng Ký
-    </NavLink>
-    ]}
-  >
-    <Meta
-      avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-      title={product.tenKhoaHoc}
-      description="This is the description"
-    />
-  </Card>
+
+          <NavLink to={`/detail/${product.maKhoaHoc}`} className="btn">
+            Đăng Ký
+          </NavLink>
+        ]}
+      >
+        <Meta
+          avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
+          title={product.tenKhoaHoc}
+          description={product.moTa.slice(0,40) + '...'}
+        />
+      </Card>
 
 
     </div>
