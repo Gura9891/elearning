@@ -14,9 +14,7 @@ function Footer({ }: Props) {
                   <a href="#">Elanning</a>
                 </h2>
                 <p>
-                  Lorem ipsum viverra feugiat. Pellen tesque libero ut justo,
-                  ultrices in ligula. Semper at tempufddfel. Lorem ipsum dolor sit
-                  amet Semper at elit.
+                  Elanning cung cấp các khóa học về lập trình với hệ thống hiện đại, hỗ trợ học viên 24/7.Chương trình giảng dạy năng đông, linh hoạt phù hợp với thời đại 4.0 hiện nay.Đặc biệt kết nối học viên với các doanh nghiệp tuyển dụng.
                 </p>
                 <div className="footer__social">
                   <a href="#"><i className="fab fa-facebook" /></a>
@@ -26,55 +24,43 @@ function Footer({ }: Props) {
                 </div>
               </div>
               <div className="footer__col">
-                <h2 className="footer__title">Usefull Links</h2>
+                <h2 className="footer__title">Danh Mục</h2>
                 <ul className="footer__menu">
                   <li className="footer__link">
-                    <a href="#">Home</a>
+                    <a href="#">Trang Chủ</a>
                   </li>
                   <li className="footer__link">
-                    <a href="#">Detail</a>
+                    <a href="#">Trang Cá Nhân</a>
                   </li>
                   <li className="footer__link">
-                    <a href="#">Course</a>
-                  </li>
-                  <li className="footer__link">
-                    <a href="#">Profile</a>
-                  </li>
-                  <li className="footer__link">
-                    <a href="#">Contact us</a>
+                    <a href="#">Danh Sách Khoá Học</a>
                   </li>
                 </ul>
               </div>
               <div className="footer__col">
-                <h2 className="footer__title">More Info</h2>
+                <h2 className="footer__title">Tổng Đài Hỗ Trợ</h2>
                 <ul className="footer__menu">
                   <li className="footer__link">
-                    <a href="#">History</a>
+                    <a href="#">Đat: 0922973414</a>
                   </li>
                   <li className="footer__link">
-                    <a href="#">Vision &amp; Values</a>
+                    <a href="#">Giang: 0373894058</a>
                   </li>
                   <li className="footer__link">
-                    <a href="#">Awards</a>
+                    <a href="#">Thắng: 0909783098 </a>
                   </li>
-                  <li className="footer__link">
-                    <a href="#">Media</a>
-                  </li>
-                  <li className="footer__link">
-                    <a href="#">Support</a>
-                  </li>
+                  
                 </ul>
               </div>
               <div className="footer__col">
-                <h2 className="footer__title">Subscribe to our Newsletter</h2>
+                <h2 className="footer__title">Theo Dõi Bản Tin</h2>
                 <p>
-                  Enter your email and receive the latest news, updates and
-                  special offers from us.
+                Nhập email của bạn và nhận tin tức, cập nhật mới nhất và các ưu đãi đặc biệt từ chúng tôi.
                 </p>
                 <div className="footer__subscibe">
-                  <input type="text" placeholder="Your Email Address" />
+                  <input type="text" placeholder="Địa chỉ email của bạn" />
                   <button className="btn btn-primary btn-subscibe">
-                    Subscibe Now
+                      Gửi
                   </button>
                 </div>
               </div>

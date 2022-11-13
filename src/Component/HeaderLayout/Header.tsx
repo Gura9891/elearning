@@ -25,7 +25,7 @@ export default function Header({ }: Props) {
   const renderLoginNavItem = () => {
     if (Object.values(userLogin).length === 0) {
       console.log(123);
-      return <NavLink to="/login">Sign In</NavLink>;
+      return <NavLink to="/login">Đăng Nhập</NavLink>;
     } else {
       return (
         <NavLink to="/profile" style={{ textDecoration: "none" }}>
@@ -37,7 +37,7 @@ export default function Header({ }: Props) {
   const renderRegisterNavItem = () => {
     if (Object.values(userLogin).length === 0) {
       console.log(123);
-      return <button className="sigup m-2" style={{ padding: 5, backgroundColor: 'red', borderRadius: 5, fontWeight: 600 }}><NavLink to="/register">Sign Up</NavLink></button>;
+      return <button className="sigup m-2" style={{ padding: 5, backgroundColor: 'red', borderRadius: 5, fontWeight: 600 }}><NavLink to="/register">Đăng Kí</NavLink></button>;
     } else {
       return
 
