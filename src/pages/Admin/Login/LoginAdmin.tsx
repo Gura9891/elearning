@@ -120,7 +120,9 @@ export default function LoginAdmin ({}: Props) {
             </button>
             <p className="small fw-bold mt-2 pt-1 mb-0">
                  Bạn chưa có tài khoản{" "}
-                  <a href="#!" className="link-danger">
+                  <a href="#!" onClick={() => {
+                navigate("/login");
+              }}>
                     Đăng ký
                   </a>
                 </p>

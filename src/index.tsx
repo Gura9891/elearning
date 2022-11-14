@@ -30,6 +30,7 @@ import CourseAdmin from "./pages/Admin/CourseAdmin/CourseAdmin";
 import UserAdmin from "./pages/Admin/UserAdmin/UserAdmin";
 
 
+
 export const history = createBrowserHistory({ window });
 
 const root = ReactDOM.createRoot(
@@ -68,6 +69,7 @@ root.render(
         
         </Route>
       </Routes>
+ 
     </HistoryRouter>
   </Provider>
 );
