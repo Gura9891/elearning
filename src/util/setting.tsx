@@ -36,10 +36,16 @@ export const config = {
   getStoreJson: (name: string) => {
     if (localStorage.getItem(name)) {
       let result: any = localStorage.getItem(name);
-      return JSON.parse(result);
+      console.log({result});
+      
+      if(result !== 'undefined'){
+        return JSON.parse(result);
+      }
+      return null
     }
     return;
   },
+
   deleteCookie: (name: string) => {
     document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;'
   },

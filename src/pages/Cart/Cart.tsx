@@ -35,18 +35,18 @@ export default function Cart({ }: Props) {
     // }
 
     const messes = () => {
-        alert('ban co muon xoa khong')
+        alert('Bạn có muốn xoá không ?')
     }
 
     const handleSubmit = () => {
         console.log(getStore(ACCESS_TOKEN));
 
         if (getStore(ACCESS_TOKEN) === null) {
-            alert('yêu cầu bạn hãy đăng nhập ')
+            alert('Yêu cầu bạn hãy đăng nhập ! ')
             return navigate('/login')
         }
         else {
-            alert('đăng kí thành công')
+            alert('Đăng kí thành công')
             navigate('/#')
             // addCartItem()
         }

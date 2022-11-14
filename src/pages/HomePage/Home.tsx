@@ -30,7 +30,7 @@ export default function Home({ title }: Props) {
   const renderProduct = () => {
     return arrProduct.map((prod: ProductModel, index: number) => {
       return (
-        <div className="col-4" key={index}>
+        <div className="col-lg-4 col-md-5 col-ms-8" key={index}>
           <Product product={prod} />
         </div>
       );
@@ -98,7 +98,7 @@ export default function Home({ title }: Props) {
     <>
       <div className="showing">
         <section className="slider">
-          <div className="container">
+          <div>
             <div className="video_carousel">
               <video className="img-fluid" autoPlay loop muted>
                 <source
@@ -116,30 +116,6 @@ export default function Home({ title }: Props) {
               <div id="product-carousel" className="carousel-inner">
                 {renderSplice()}
               </div>
-              <button
-                className="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev"
-              >
-                <span
-                  className="carousel-control-prev-icon"
-                  aria-hidden="true"
-                />
-                <span className="visually-hidden">Previous</span>
-              </button>
-              <button
-                className="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next"
-              >
-                <span
-                  className="carousel-control-next-icon"
-                  aria-hidden="true"
-                />
-                <span className="visually-hidden">Next</span>
-              </button>
             </div>
           </div>
         </section>
@@ -151,18 +127,20 @@ export default function Home({ title }: Props) {
             nghệ.
           </p>
           <div className="main">
-            <div className="course-list">{renderProduct()}</div>
+            <picture>
+              <div className="course-list">{renderProduct()}</div>
+            </picture>
           </div>
 
           <div className="footer-btn">
-            <button className="btn btn-primary" onClick={() => navigate()}>
+            <button className="btn btn-primary">
               Xem thêm nhiều khoá học
             </button>
           </div>
         </div>
-        <section className="count section" style={{padding:"50px 0"}}>
+        <section className="count section" style={{ padding: "50px 0" }}>
           <div className="container">
-            <h3 className="text-center" style={{padding:'20px 0' }}>Thống Kê Thành Tựu Đạt Được</h3>
+            <h3 className="text-center" style={{ padding: '20px 0' }}>Thống Kê Thành Tựu Đạt Được</h3>
             <div className="count__content grid">
               <div className="count__item">
                 <div className="item__icon icon">
@@ -206,7 +184,7 @@ export default function Home({ title }: Props) {
                 <div className="testimonial__item">
                   <div className="item__content">
                     <a href="#" className="comment-img">
-                      <img src="../../assets/img/dat.png" alt="..." />
+                      <img src="../../assets/img/none-user-avatar.jpg" alt="..." />
                     </a>
                     <div className="quote">
                       <i className="fas fa-quote-left"></i>
@@ -232,7 +210,7 @@ export default function Home({ title }: Props) {
                 <div className="testimonial__item">
                   <div className="item__content">
                     <a href="#" className="comment-img">
-                      <img src="../../assets/athang.png" alt="..." />
+                      <img src="../../assets/img/none-user-avatar.jpg" alt="..." />
                     </a>
                     <div className="quote">
                       <i className="fas fa-quote-left"></i>
@@ -258,7 +236,7 @@ export default function Home({ title }: Props) {
                 <div className="testimonial__item">
                   <div className="item__content">
                     <a href="#" className="comment-img">
-                      <img src="../../assets/img/avatar2.jpg" alt="..." />
+                      <img src="../../assets/img/none-user-avatar.jpg" alt="..." />
                     </a>
                     <div className="quote">
                       <i className="fas fa-quote-left"></i>
