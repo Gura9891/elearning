@@ -11,7 +11,8 @@ import {
   ProductModel,
   DanhMuc,
 } from "../../redux/reducers/productProducer";
-import { http } from "../../util/setting";
+import { getProfileAction, Profile, userCheck } from "../../redux/reducers/userReducer";
+import { ACCESS_TOKEN, http, USER_LOGIN } from "../../util/setting";
 
 type Props = {};
 
@@ -28,9 +29,41 @@ export default function Header({ }: Props) {
       return <NavLink to="/login">Đăng Nhập</NavLink>;
     } else {
       return (
-        <NavLink to="/profile" style={{ textDecoration: "none" }}>
-          <i className="fa-solid fa-user"></i> {userLogin.hoTen}
-        </NavLink>
+        <li className="d-flex align-items-center ">
+        <div className="nav-item">
+          <NavLink className="nav-link text-center" to="/profile">
+            <button className="btn btn-outline-light text-sm">
+              Tài khoản
+              <span className="text-uppercase"> {userLogin.hoTen}</span>
+            </button>
+          </NavLink>
+        </div>
+        <div className="nav-item">
+          <NavLink className="nav-link" to="">
+            <button
+              className="ms-1 btn btn-outline-light text-sm"
+              onClick={() => {
+                localStorage.removeItem(ACCESS_TOKEN);
+                localStorage.removeItem(USER_LOGIN);
+                let user: Profile = {
+                  chiTietKhoaHocGhiDanh: [],
+                  taiKhoan: "",
+                  matKhau: "",
+                  hoTen: "",
+                  soDT: "",
+                  maLoaiNguoiDung: "",
+                  maNhom: "",
+                  email: "",
+                };
+                dispatch(getProfileAction(user));
+                dispatch(userCheck(''))
+              }}
+            >
+              Đăng xuất
+            </button>
+          </NavLink>
+        </div>
+      </li>
       );
     }
   };

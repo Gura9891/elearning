@@ -102,7 +102,7 @@ const userReducer = createSlice({
     getProfileAction: (state, action: PayloadAction<Profile>) => {
       state.userLogin = action.payload;
     },
-    userCheck: (state, action: PayloadAction<Profile>) => {
+    userCheck: (state, action: PayloadAction<string>) => {
       state.userToken = action.payload;
     },
 
@@ -151,6 +151,7 @@ export const LoginApi = (userLogin: userLogin) => {
       setStore(ACCESS_TOKEN, result.data.accessToken);
       dispatch(userCheck(result.data.accessToken));
       dispatch(getProfileApi());
+      
     } catch (err) {
       console.log(err);
     }
